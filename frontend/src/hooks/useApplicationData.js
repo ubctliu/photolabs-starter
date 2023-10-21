@@ -10,8 +10,7 @@ const useApplicationData = () => {
     photos: [],
     topics: [],
     favorites: new Set(),
-    currentTopic: null,
-    fetchingCurrentTopic: false
+    currentTopic: null
   });
 
   const closeModal = () => {
