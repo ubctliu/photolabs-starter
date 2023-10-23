@@ -14,7 +14,7 @@ PhotoLabs is a single-page application created as part of the React course using
 !["front-page"](./docs/front_page.png)
 !["modal-view"](./docs/modal_view.png)
 !["topic-selected"](./docs/topic_selected.png)
-!["light-mode-favorites"](./docs/light_mode_favorites)
+!["light-mode-favorites"](./docs/light_mode_favorites.png)
 ## Setup
 
 Install dependencies with `npm install` in each respective `/frontend` and `/backend` folder.
