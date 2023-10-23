@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './App.scss';
-import HomeRoute from './routes/HomeRoute';
+import HomeRoute from 'routes/HomeRoute';
 import PhotoDetailsModal from 'routes/PhotoDetailsModal';
 import useApplicationData from 'hooks/useApplicationData';
 
@@ -14,13 +14,18 @@ const App = () => {
     addFavPhoto,
     removeFavPhoto,
     setCurrentTopic,
+    setSearchTerm,
+    showFavorites,
+    toggleDarkMode,
     isModalOpen,
     selectedPhoto,
     favorites,
     selected,
     displayAlert,
     photos,
-    topics
+    topics,
+    displayFavorites,
+    darkMode
   } = useApplicationData();
 
   const isPhotoFavorited = (photo) => {
@@ -28,19 +33,24 @@ const App = () => {
   };
 
   return (
-    <div className="App">
+    <div className={`App${darkMode ? '-dark-mode' : ''}`}>
       <HomeRoute
         photos={photos}
         topics={topics}
         favorites={favorites}
         selected={selected}
         displayAlert={displayAlert}
+        displayFavorites={displayFavorites}
         addFavPhoto={addFavPhoto}
         removeFavPhoto={removeFavPhoto}
         onClick={openModal}
         toggleFavorite={toggleFavorite}
         updateAlert={updateAlert}
         setCurrentTopic={setCurrentTopic}
+        setSearchTerm={setSearchTerm}
+        showFavorites={showFavorites}
+        toggleDarkMode={toggleDarkMode}
+        darkMode={darkMode}
       />
       {isModalOpen && <PhotoDetailsModal
         {...selectedPhoto}
@@ -48,6 +58,7 @@ const App = () => {
         isPhotoFavorited={isPhotoFavorited}
         updateAlert={updateAlert}
         onClick={closeModal}
+        darkMode={darkMode}
       />}
     </div>
   );
